@@ -4,28 +4,26 @@ import StatusBadge from "./StatusBadge";
 function Card({ heroi }) {
   const [xp, setXp] = useState(0);
   const [nivel, setNivel] = useState(0);
+  const [mostrarMsg, setMostrarMsg] = useState(false);
 
   function mostrarLevelUp() {
-  const msg = document.getElementById("levelUpMsg");
-  msg.style.display = "block";
+    setMostrarMsg(true);
 
-  setTimeout(() => {
-    msg.style.display = "none";
-  }, 1000);
-}
+    setTimeout(() => {
+      setMostrarMsg(false);
+    }, 1000);
+  }
 
   let cor = "border-gray-300";
 
   if (xp === 100) {
+    cor = "border-amber-400";
+
     setTimeout(() => {
       setNivel(nivel + 1);
       mostrarLevelUp();
       setXp(0);
-    }, 100); // Sabe quando você ta dormindo e do nada vem a solução do código? Foi isso que aconteceu...
-  }
-
-  if (nivel >= 5) {
-    cor = "border-amber-400";
+    }, 100);
   }
 
   return (
@@ -35,9 +33,22 @@ function Card({ heroi }) {
       <div className="flex justify-center mb-4">
         <StatusBadge tipo={heroi.status} />
       </div>
-      <div id="levelUpMsg" style={{ position: "fixed", top: "20px", left: "50%", transform: "translateX(-50%)", background: "#222", color: "#fff", padding: "10px 20px", borderRadius: "8px", display: "none" }}>
-        {heroi.nome} teve um Level Up! {/* mudar o nome depois */}    
-      </div>
+      {mostrarMsg && (
+        <div
+          style={{
+            position: "fixed",
+            top: "20px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            background: "#222",
+            color: "#fff",
+            padding: "10px 20px",
+            borderRadius: "8px",
+          }}
+        >
+          {heroi.nome} teve um Level Up!
+        </div>
+      )}
       <div>Nível: {nivel}</div>
       <img
         src={heroi.imagem}
