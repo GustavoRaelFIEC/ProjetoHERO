@@ -1,5 +1,4 @@
 import Card from "./components/Card.jsx";
-import Teste from "./components/Teste.jsx";
 import Login from "./components/Login.jsx";
 import Cadastro from "./components/Cadastrar.jsx";
 import StatusBadge from "./components/StatusBadge.jsx";
