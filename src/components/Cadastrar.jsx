@@ -41,40 +41,40 @@ function Cadastro() {
         </div>
         <form onSubmit={handleCadastro}>
           <div className="space-y-4">
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="mb-2 block text-sm font-medium text-gray-700">
               Nome Completo
             </label>
             <input
               type="text"
               required
               placeholder="Gustavo Dias"
-              className="w-full border px-4 py-2 mt-1 border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 foucus:outline-none"
+              className="mb-2 w-full border px-4 py-2 mt-1 border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 foucus:outline-none"
               value={nome}
               onChange={(e) => setNome(e.target.value)}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="mb-2 block text-sm font-medium text-gray-700">
               Email
             </label>
             <input
               type="text"
               required
               placeholder="gustavo.dias@email.com"
-              className="w-full border px-4 py-2 mt-1 border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 foucus:outline-none transition-all"
+              className="mb-2 w-full border px-4 py-2 mt-1 border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 foucus:outline-none transition-all"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="mb-2 block text-sm font-medium text-gray-700">
               Senha
             </label>
             <input
               type="password"
               required
               placeholder="Digite sua senha"
-              className="w-full border px-4 py-2 mt-1 border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 foucus:outline-none transition-all"
+              className="mb-4 w-full border px-4 py-2 mt-1 border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 foucus:outline-none transition-all"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
             />
@@ -82,7 +82,7 @@ function Cadastro() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+            className="cursor-pointer w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
           >
             Cadastrar
           </button>
